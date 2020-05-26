@@ -47,21 +47,4 @@ class ProductMenuTest {
 	    System.setIn(System.in);
 	    System.setOut(System.out);
 	}
-	
-	@Test
-	public void registerMenuTest() {
-		String description = "Very good computer for building software";
-		String unitPrice = "10";
-		String quantity = "2";
-		String currency = "Bolivians";
-		String enter = "\n";
-		String allDataRegisterMenu = description+enter+unitPrice+enter+quantity+enter+currency;
-		setInput(allDataRegisterMenu);
-	    assertEquals(allDataRegisterMenu, outContent.toString());
-//		setInput(unitPrice);
-//		SoldProduct soldProduct = productMenu.registerMenu();
-//		String expectedDescription = "poiuytrewqasdfghjk";
-//	    assertEquals(expectedDescription, soldProduct.getDescription());
-//	    assertEquals("hello", outContent.toString());
-	}
 }

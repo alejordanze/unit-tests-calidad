@@ -36,7 +36,6 @@ public class UserTest {
 	
 	@Test
 	void toStringUserTest() {
-		System.out.println(userWithConstructor.toString());
 		assertEquals("User{fullName=Jorge Diaz, ci=1234567, email=jorge@mail.com, address=av. america #222}",userWithConstructor.toString());
 	}
 }

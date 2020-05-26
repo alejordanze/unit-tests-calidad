@@ -50,18 +50,23 @@ class ProductMenuTest {
 	
 	@Test
 	public void registerMenuTest() {
-		String description = "Very good computer for building software";
-		String unitPrice = "10";
-		String quantity = "2";
-		String currency = "Bolivians";
+		String description = "Extremalyperfect";
+		setInput(description);
 		String enter = "\n";
-		String allDataRegisterMenu = description+enter+unitPrice+enter+quantity+enter+currency;
-		setInput(allDataRegisterMenu);
-	    assertEquals(allDataRegisterMenu, outContent.toString());
+//		setInput(enter);
+//		String unitPrice = "10";
 //		setInput(unitPrice);
+	    assertEquals(description, getOutput());
+//		String quantity = "2";
+////		setInput(quantity);
+//		String currency = "Bolivians";
+////		setInput(currency);
+//		String enter = "\n";
+//		System.out.println("aquiiiiiiiiiiiiii");
 //		SoldProduct soldProduct = productMenu.registerMenu();
-//		String expectedDescription = "poiuytrewqasdfghjk";
-//	    assertEquals(expectedDescription, soldProduct.getDescription());
-//	    assertEquals("hello", outContent.toString());
-	}
+//		System.out.println(soldProduct.getDescription());
+//	    assertEquals(description, soldProduct.getDescription());
+
+//	    assertEquals("hola","hola");
+}
 }

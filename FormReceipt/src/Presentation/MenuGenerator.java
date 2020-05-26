@@ -61,6 +61,7 @@ public class MenuGenerator {
 
         selection = sc.nextInt();
         
+        System.out.println("option entered: "+ selection);
         return selection;
     }
     
@@ -71,6 +72,7 @@ public class MenuGenerator {
         while (!errorMessage.isEmpty()) {
             System.out.print(message);
             String valueEntered = scanner.nextLine();
+            System.out.println("value entered: "+ valueEntered);
             errorMessage = Validator.applyValidation(valueEntered, validation);
             if (errorMessage.isEmpty()) {
                 response = valueEntered;

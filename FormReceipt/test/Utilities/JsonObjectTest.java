@@ -13,18 +13,9 @@ class JsonObjectTest {
 	
 	private JsonObject jsonObject = new JsonObject(); 
 
-	
-
 	@Test
 	void testSaveJsonFile() throws IOException {
 		assertTrue(jsonObject.saveJsonFile("prueba"));
-	}
-
-	@Test
-	void testAddPairToJson() {
-		jsonObject.addPairToJson("llave", "valor");
-		
-
 	}
 
 	@Test

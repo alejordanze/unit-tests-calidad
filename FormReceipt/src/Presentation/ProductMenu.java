@@ -25,7 +25,7 @@ public class ProductMenu implements Menu<SoldProduct> {
         return new SoldProduct(description, Float.parseFloat(unitPrice), Integer.parseInt(quantity), currency);
     }
     
-    private String currencyOption() {
+    public String currencyOption() {
         String title = " Select currency option => ";
         ArrayList<String> options = new ArrayList();
         
@@ -36,15 +36,21 @@ public class ProductMenu implements Menu<SoldProduct> {
         MenuGenerator.generateMenu(title, options);
         
         int option = MenuGenerator.getOption();
-        int isValidOption = options.size() - option;
+        if(option > 0) {
+        	int isValidOption = options.size() - option;
                 
-        while (isValidOption < 0) {
-            System.out.print("Please enter a valid option => ");
-            option = MenuGenerator.getOption();
-            isValidOption = options.size() - option;
+	        while (isValidOption < 0) {
+	            System.out.print("Please enter a valid option => ");
+	            option = MenuGenerator.getOption();
+	            isValidOption = options.size() - option;
+	        }
         }
         
-        String optionMenu = options.get(option - 1);
+        String optionMenu = "";
+        
+        if(option > 0) {
+        	optionMenu = options.get(option - 1);
+        }
         
         return optionMenu;
     }

@@ -59,7 +59,9 @@ public class MenuGenerator {
         int selection = 0;
         Scanner sc = new Scanner(System.in);
 
-        selection = sc.nextInt();
+        if(sc.hasNext()) {
+        	selection = sc.nextInt();
+        }
         
         System.out.println("option entered: "+ selection);
         return selection;

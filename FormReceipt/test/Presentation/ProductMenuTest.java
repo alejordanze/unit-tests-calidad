@@ -2,49 +2,35 @@ package Presentation;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.io.PrintStream;
-import java.util.Scanner;
-
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import Models.SoldProduct;
-
 class ProductMenuTest {
 
-	private InputStream inContent;
-	private ByteArrayOutputStream outContent;
 	private ProductMenu productMenu;
+    
+	void autoInput(String input) {
+		ByteArrayInputStream in = new ByteArrayInputStream(input.getBytes());
+		System.setIn(in);
+	}
 	
-    private String getOutput() {
-        return outContent.toString();
-    }
-    
-    private void setInput(String input) {
-        inContent = new ByteArrayInputStream(input.getBytes());
-        System.setIn(inContent);
-        setScan();
-    }
-    
-    private void setScan() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print(scanner.next());
-        scanner.close();       
-    }
-    
 	@BeforeEach
 	public void setUpStreams() {
-		outContent = new ByteArrayOutputStream();
-	    System.setOut(new PrintStream(outContent));
+	
 	    productMenu = new ProductMenu();
 	}
-
-	@AfterEach
-	public void restoreStreams() {
-	    System.setIn(System.in);
-	    System.setOut(System.out);
+	
+	@Test
+	public void currencyOptionTest() {
+		autoInput("1\n");
+		java.io.ByteArrayOutputStream out = new java.io.ByteArrayOutputStream();    
+		System.setOut(new java.io.PrintStream(out));
+		this.productMenu.currencyOption();
+		assertEquals(" Select currency option => \n" + 
+				"---------------------------\n" + 
+				"	1.- Bolivians\n" + 
+				"	2.- Dollars\n" + 
+				"	3.- Euros\n" + 
+				"Choose a options => option entered: 1\n", out.toString());
 	}
 }

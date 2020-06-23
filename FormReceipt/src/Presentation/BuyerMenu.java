@@ -93,11 +93,9 @@ public class BuyerMenu implements Menu<Buyer> {
         productDetailSection.put("Total", total);
         
         MenuGenerator.generateInformationSection(titleProductDetailSection, productDetailSection);
-        
-        
     }
     
-    private String getExtensionCI() {
+    public String getExtensionCI() {
         String title = " Select the extension CI => ";
         
         ArrayList<String> options = new ArrayList();
@@ -128,7 +126,7 @@ public class BuyerMenu implements Menu<Buyer> {
         return optionMenu;
     }
     
-    private String paymentOption() {
+    public String paymentOption() {
         String title = " Select payment method => ";
         ArrayList<String> options = new ArrayList();
         
